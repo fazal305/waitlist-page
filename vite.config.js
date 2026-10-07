@@ -15,7 +15,7 @@ function devApi(env) {
         const body = Buffer.concat(chunks).toString();
 
         let response;
-        if (env.SUPABASE_URL && env.SUPABASE_SECRET_KEY) {
+        if (env.SUPABASE_URL && env.WAITLIST_RPC_TOKEN) {
           Object.assign(process.env, env);
           const { POST } = await server.ssrLoadModule('/api/waitlist.js');
           response = await POST(
