@@ -40,7 +40,7 @@ npm install
 npm run dev
 ```
 
-Without Supabase env vars, the dev server mocks `/api/waitlist`, so every UI state can be tried. Emails starting with `slow` take 6 s, `fail` returns 500, `limit` returns 429 and `bad` returns 400; anything else succeeds.
+Without Supabase env vars, the dev server mocks `/api/waitlist`, so every UI state can be tried. Emails starting with `slow` take 10 s, `fail` returns 500, `limit` returns 429 and `bad` returns 400; anything else succeeds.
 
 To use a real database:
 

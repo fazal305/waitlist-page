@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react';
 
 export const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const SLOW_AFTER_MS = 4000;
+const SLOW_AFTER_MS = 8000;
 
 export function validateEmail(value) {
   const email = value.trim();

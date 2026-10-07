@@ -3,7 +3,7 @@ import preact from '@preact/preset-vite';
 
 // Serves /api/waitlist during `vite dev`. With Supabase env vars set it runs the real
 // serverless handler; without them it mocks responses so every UI state can be exercised:
-// emails starting with "slow" take 6s, "fail" returns 500, "limit" returns 429, "bad" returns 400.
+// emails starting with "slow" take 10s, "fail" returns 500, "limit" returns 429, "bad" returns 400.
 function devApi(env) {
   return {
     name: 'dev-api',
@@ -29,7 +29,7 @@ function devApi(env) {
               return '';
             }
           })();
-          const wait = email.startsWith('slow') ? 6000 : 700;
+          const wait = email.startsWith('slow') ? 10000 : 700;
           await new Promise((r) => setTimeout(r, wait));
           const status = email.startsWith('fail') ? 500 : email.startsWith('limit') ? 429 : email.startsWith('bad') ? 400 : 201;
           response = Response.json({ ok: status === 201 }, { status });
