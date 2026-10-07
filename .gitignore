@@ -6,3 +6,7 @@ dist
 .vercel
 .claude
 *.log
+
+.vercel
+.env*
+!.env.example

@@ -35,45 +35,46 @@ function Shelf() {
 
 export default function App() {
   return (
-    <div className="page">
+    <>
       <p className="demo-banner">
         Portfolio demo: Shelfnote is a fictional product made to show a working waitlist form.
       </p>
+      <div className="page">
+        <header className="brand">
+          <img src={logoUrl} alt="" width="32" height="32" />
+          <span className="brand__name">Shelfnote</span>
+        </header>
 
-      <header className="brand">
-        <img src={logoUrl} alt="" width="32" height="32" />
-        <span className="brand__name">Shelfnote</span>
-      </header>
-
-      <main className="hero">
-        <div className="hero__copy">
-          <p className="eyebrow">Waitlist open</p>
-          <h1 className="hero__title">Remember every book you&rsquo;ve read.</h1>
-          <p className="hero__sub">
-            Shelfnote is a quiet reading log for people who read on paper. Snap the cover, keep the lines that stopped
-            you, and find them again years later. No feeds, no streaks, no reading goals.
-          </p>
-          <WaitlistForm onSubmit={joinWaitlist} />
-        </div>
-        <Shelf />
-      </main>
-
-      <section className="features" aria-label="What Shelfnote does">
-        {FEATURES.map((f) => (
-          <div className="feature" key={f.title}>
-            <h2 className="feature__title">{f.title}</h2>
-            <p className="feature__text">{f.text}</p>
+        <main className="hero">
+          <div className="hero__copy">
+            <p className="eyebrow">Waitlist open</p>
+            <h1 className="hero__title">Remember every book you&rsquo;ve read.</h1>
+            <p className="hero__sub">
+              Shelfnote is a quiet reading log for people who read on paper. Snap the cover, keep the lines that stopped
+              you, and find them again years later. No feeds, no streaks, no reading goals.
+            </p>
+            <WaitlistForm onSubmit={joinWaitlist} />
           </div>
-        ))}
-      </section>
+          <Shelf />
+        </main>
 
-      <footer className="footer">
-        <span>Shelfnote demo &middot; {new Date().getFullYear()}</span>
-        <nav className="footer__links" aria-label="Footer">
-          <a href="/privacy.html">Privacy</a>
-          <a href="https://github.com/fazal305/waitlist-page">Source on GitHub</a>
-        </nav>
-      </footer>
-    </div>
+        <section className="features" aria-label="What Shelfnote does">
+          {FEATURES.map((f) => (
+            <div className="feature" key={f.title}>
+              <h2 className="feature__title">{f.title}</h2>
+              <p className="feature__text">{f.text}</p>
+            </div>
+          ))}
+        </section>
+
+        <footer className="footer">
+          <span>Shelfnote demo &middot; {new Date().getFullYear()}</span>
+          <nav className="footer__links" aria-label="Footer">
+            <a href="/privacy.html">Privacy</a>
+            <a href="https://github.com/fazal305/waitlist-page">Source on GitHub</a>
+          </nav>
+        </footer>
+      </div>
+    </>
   );
 }

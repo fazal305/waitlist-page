@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://waitlist-page-sepia.vercel.app/sitemap.xml

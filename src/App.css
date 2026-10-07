@@ -100,9 +100,16 @@ a:hover {
 
 /* Layout */
 
-.page {
+#root {
   min-height: 100vh;
   min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   max-width: 68rem;
@@ -111,7 +118,6 @@ a:hover {
 }
 
 .demo-banner {
-  margin: 0 calc(var(--gutter) * -1);
   padding: 0.55rem var(--gutter);
   background: var(--ink);
   color: var(--paper);
@@ -213,6 +219,10 @@ a:hover {
   border-color: var(--accent);
 }
 
+.waitlist__row:has(.waitlist__input:focus-visible) {
+  box-shadow: 0 0 0 3px var(--focus);
+}
+
 .waitlist__row--invalid,
 .waitlist__row--invalid:focus-within {
   border-color: var(--error);
@@ -234,8 +244,9 @@ a:hover {
   opacity: 1;
 }
 
+/* The row draws the focus ring for the input, so the input itself stays clean. */
 .waitlist__input:focus-visible {
-  outline-offset: 0;
+  outline: none;
 }
 
 .waitlist__button {
